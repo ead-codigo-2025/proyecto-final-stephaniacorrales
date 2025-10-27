@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Proyecto 1 - Stephania Corrales</title>
+  <link href="https://fonts.googleapis.com/css2?family=Dongle:wght@300;400;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <header>
+    <nav>
+      <div class="back">
+        <a href="index.html"><span class="arrow">←</span></a>
+      </div>
+      <ul>
+        <li class="dropdown">
+          <a href="#">Diseño industrial ▼</a>
+          <ul class="dropdown-content">
+            <li><a href="proyecto1.html">Proyecto 1</a></li>
+            <li><a href="proyecto2.html">Proyecto 2</a></li>
+            <li><a href="proyecto3.html">Proyecto 3</a></li>
+            <li><a href="proyecto4.html">Proyecto 4</a></li>
+            <li><a href="proyecto5.html">Proyecto 5</a></li>
+          </ul>
+        </li>
+        <li class="dropdown">
+          <a href="#">Diseño interacción ▼</a>
+          <ul class="dropdown-content">
+            <li><a href="proyecto6.html">Proyecto 6</a></li>
+            <li><a href="proyecto7.html">Proyecto 7</a></li>
+            <li><a href="proyecto8.html">Proyecto 8</a></li>
+              <li><a href="proyecto9.html">Proyecto 9</a></li>
+              <li><a href="proyecto10.html">Proyecto 10</a></li>
+          </ul>
+        </li>
+        <li><a href="sobre-mi.html" class="activo">Sobre mí</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <main>
+    <h1>Proyecto3: Disperción en levedad</h1>
+
+    <div class="imagen-proyecto" style="background-image: url('imagenes/madlab.jpg');"></div>
+
+    <div class="descripcion">
+      <p>
+       El proyecto estudia cómo la luz filtrada que es la invita al reposo y las
+        sombras opacas que definen espacios influyen en el transito y la permanencia 
+        de las personas, contrastando con la rapidez de las zonas transparentes y 
+        destacando el movimiento dinámico de las sombras proyectadas por los tramados.
+      </p>
+    </div>
+
+    <a class="link-wiki" href="https://wiki.ead.pucv.cl/M3:_Cierre_M%C3%B3dulo_3_Taller_del_Habitar-_(Dispersi%C3%B3n_en_levedad)_/_Stephania_Corrales" target="_blank">Link: wiki proyecto</a>
+  </main>
+  <script>
+    document.addEventListener("DOMContentLoaded", () => {
+      const dropdowns = document.querySelectorAll(".dropdown > a");
+
+      dropdowns.forEach(button => {
+        button.addEventListener("click", (event) => {
+          event.preventDefault();
+
+          const parent = button.parentElement;
+
+          
+          document.querySelectorAll(".dropdown").forEach(drop => {
+            if (drop !== parent) drop.classList.remove("active");
+          });
+
+          
+          parent.classList.toggle("active");
+        });
+      });
+
+      
+      document.addEventListener("click", (event) => {
+        if (!event.target.closest(".dropdown")) {
+          document.querySelectorAll(".dropdown").forEach(drop => drop.classList.remove("active"));
+        }
+      });
+    });
+  </script>
+</body>
+</html>

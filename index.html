@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Portafolio Stephania Corrales</title>
+  <link href="https://fonts.googleapis.com/css2?family=Dongle:wght@300;400;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+  <style>
+    nav ul {
+      justify-content: flex-end !important;
+      margin-right: 40px;
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <nav style="display: flex; justify-content: flex-end; padding-right: 40px;">
+      <ul style="display: flex; gap: 30px; list-style: none; margin: 0; padding: 0;">
+        <li class="dropdown">
+          <a href="#">Diseño industrial ▼</a>
+          <ul class="dropdown-content">
+            <li><a href="proyecto1.html">Proyecto 1</a></li>
+            <li><a href="proyecto2.html">Proyecto 2</a></li>
+            <li><a href="proyecto3.html">Proyecto 3</a></li>
+            <li><a href="proyecto4.html">Proyecto 4</a></li>
+            <li><a href="proyecto5.html">Proyecto 5</a></li>
+          </ul>
+        </li>
+        <li class="dropdown">
+          <a href="#">Diseño interacción ▼</a>
+          <ul class="dropdown-content">
+            <li><a href="proyecto6.html">Proyecto 6</a></li>
+            <li><a href="proyecto7.html">Proyecto 7</a></li>
+            <li><a href="proyecto8.html">Proyecto 8</a></li>
+            <li><a href="proyecto9.html">Proyecto 9</a></li>
+            <li><a href="proyecto10.html">Proyecto 10</a></li>
+          </ul>
+        </li>
+        <li><a href="sobre-mi.html" class="activo">Sobre mí</a></li>
+      </ul>
+    </nav>
+
+  </header>
+
+  <main>
+    <section class="presentacion">
+      <h1>Stephania Corrales</h1>
+
+      <div class="sobre-mi">
+        <div class="texto">
+          <h2>Sobre mí :D</h2>
+          <p>
+            Hola, soy Stephania Corrales soy de la ciudad de Iquique y tengo 21 años, estoy estudiando diseño
+            y me encuentro cursando mi cuarto año. Mis intereses van por el diseño industrial, me gusta
+            trabajar con madera en distintas técnicas. Uno de mis mayores intereses es coleccionar figuras
+            de legos.
+          </p>
+          <p>
+            En este portafolio te muestro mis proyectos industriales y de diseño de interacción.
+          </p>
+        </div>
+        <div class="foto" style="background-image: url('imagenes/legomi.png');"></div>
+      </div>
+    </section>
+
+    <section class="portafolio">
+      <h2>Portafolio personal</h2>
+
+      <div class="categoria">
+        <h3>Diseño industrial</h3>
+        <div class="galeria">
+          <a href="proyecto1.html" class="proyecto">
+            <div class="img-placeholder" style="background-image: url('imagenes/topologico.jpg');"></div>
+            <p>Proyecto1: Proyecto de Ornamentación de la Fiesta de San Pedro</p>
+          </a>
+
+          
+          <div class="proyecto">
+            <a href="proyecto2.html" class="proyecto">
+              <div class="img-placeholder" style="background-image: url('imagenes/arturo.jpg');"></div>
+              <p>Proyecto2: Limitado despligue progresivo</p>
+            </a>
+          </div>
+          <div class="proyecto">
+            <a href="proyecto3.html" class="proyecto">
+              <div class="img-placeholder" style="background-image: url('imagenes/diseño_habitar.jpg');"></div>
+              <p>Proyecto3: Disperción en levedad</p>
+            </a>
+          </div>
+          <div class="proyecto">
+            <a href="proyecto4.html" class="proyecto">
+              <div class="img-placeholder" style="background-image: url('imagenes/madlab.jpg');"></div>
+              <p>Proyecto4: Mueble estación de trabajo</p>
+            </a>
+          </div>
+          <div class="proyecto">
+            <a href="proyecto5.html" class="proyecto">
+              <div class="img-placeholder" style="background-image: url('imagenes/expositivo.png');"></div>
+              <p>Proyecto5: Módulo exposición 40 años de travesías</p>
+            </a>
+          </div>
+        </div>
+      </div>
+
+      <div class="categoria">
+        <h3>Diseño Interacción</h3>
+        <div class="galeria">
+          <div class="proyecto">
+            <a href="proyecto6.html" class="proyecto">
+              <div class="img-placeholder" style="background-image: url('imagenes/sam_empanadas.jpg');"></div>
+              <p>Proyecto6: Banquetería Sam empanadas</p>
+            </a>
+          </div>
+          <div class="proyecto">
+            <a href="proyecto7.html" class="proyecto">
+              <div class="img-placeholder" style="background-image: url('imagenes/fanaloza.jpg');"></div>
+              <p>Proyecto7: Forma fluida entre lo cotidiano y lo deicado</p>
+            </a>
+          </div>
+          <div class="proyecto">
+            <a href="proyecto8.html" class="proyecto">
+              <div class="img-placeholder" style="background-image: url('imagenes/microondas.png');"></div>
+              <p>Proyecto8: Proyecto microondas</p>
+            </a>
+          </div>
+          <div class="proyecto">
+            <a href="proyecto9.html" class="proyecto">
+             <div class="img-placeholder" style="background-image: url('imagenes/molde.png');"></div>
+            <p>Proyecto9: Moldes Fanaloza</p>
+            </a>
+          </div>
+          <div class="proyecto">
+            <a href="proyecto10.html" class="proyecto">
+             <div class="img-placeholder" style="background-image: url('imagenes/cartografia.JPG');"></div>
+            <p>Proyecto10: Bordes intangibles cartografías</p>
+            </a>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+  <script>
+    document.addEventListener("DOMContentLoaded", () => {
+      const dropdowns = document.querySelectorAll(".dropdown > a");
+
+      dropdowns.forEach(button => {
+        button.addEventListener("click", (event) => {
+          event.preventDefault();
+
+          const parent = button.parentElement;
+
+          
+          document.querySelectorAll(".dropdown").forEach(drop => {
+            if (drop !== parent) drop.classList.remove("active");
+          });
+
+        
+          parent.classList.toggle("active");
+        });
+      });
+
+      
+      document.addEventListener("click", (event) => {
+        if (!event.target.closest(".dropdown")) {
+          document.querySelectorAll(".dropdown").forEach(drop => drop.classList.remove("active"));
+        }
+      });
+    });
+  </script>
+  
+</body>
+</html>
+
+
+
+

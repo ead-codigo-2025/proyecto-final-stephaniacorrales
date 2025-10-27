@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Proyecto 1 - Stephania Corrales</title>
+  <link href="https://fonts.googleapis.com/css2?family=Dongle:wght@300;400;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <header>
+    <nav>
+      <div class="back">
+        <a href="index.html"><span class="arrow">←</span></a>
+      </div>
+      <ul>
+        <li class="dropdown">
+          <a href="#">Diseño industrial ▼</a>
+          <ul class="dropdown-content">
+            <li><a href="proyecto1.html">Proyecto 1</a></li>
+            <li><a href="proyecto2.html">Proyecto 2</a></li>
+            <li><a href="proyecto3.html">Proyecto 3</a></li>
+            <li><a href="proyecto4.html">Proyecto 4</a></li>
+            <li><a href="proyecto5.html">Proyecto 5</a></li>
+          </ul>
+        </li>
+        <li class="dropdown">
+          <a href="#">Diseño interacción ▼</a>
+          <ul class="dropdown-content">
+            <li><a href="proyecto6.html">Proyecto 6</a></li>
+            <li><a href="proyecto7.html">Proyecto 7</a></li>
+            <li><a href="proyecto8.html">Proyecto 8</a></li>
+              <li><a href="proyecto9.html">Proyecto 9</a></li>
+              <li><a href="proyecto10.html">Proyecto 10</a></li>
+          </ul>
+        </li>
+        <li><a href="sobre-mi.html" class="activo">Sobre mí</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <main>
+    <h1>Proyecto8: Proyecto microondas</h1>
+
+    <div class="imagen-proyecto" style="background-image: url('imagenes/microondas.png');"></div>
+
+    <div class="descripcion">
+      <p>
+       Se debe elejir un electrodomestico de nuestra casa para poder realizar un modelado digital,
+       El modelado se debe realizar en blender, este debe contener texturas que asimilen al objeto
+       real, se deben ubicar las camaras en el plano para luego grabar un video logrando la trasición
+       con todas las camara. El modelado debe tener movimiento asimilando al real.
+    </div>
+
+    <a class="link-wiki" href="https://wiki.ead.pucv.cl/Modelado_Digital_Avanzado_-_Microondas_/Stephania_Corrales" target="_blank">Link: wiki proyecto</a>
+  </main>
+  <script>
+    document.addEventListener("DOMContentLoaded", () => {
+      const dropdowns = document.querySelectorAll(".dropdown > a");
+
+      dropdowns.forEach(button => {
+        button.addEventListener("click", (event) => {
+          event.preventDefault();
+
+          const parent = button.parentElement;
+
+          
+          document.querySelectorAll(".dropdown").forEach(drop => {
+            if (drop !== parent) drop.classList.remove("active");
+          });
+
+          
+          parent.classList.toggle("active");
+        });
+      });
+
+     
+      document.addEventListener("click", (event) => {
+        if (!event.target.closest(".dropdown")) {
+          document.querySelectorAll(".dropdown").forEach(drop => drop.classList.remove("active"));
+        }
+      });
+    });
+  </script>
+</body>
+</html>
